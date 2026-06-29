@@ -1,4 +1,4 @@
-import type { WalnutContext } from './walnut';
+import type { WalnutWebContext } from './walnut';
 
 /** @walnut_method
  * name: Login to Application
@@ -8,7 +8,7 @@ import type { WalnutContext } from './walnut';
  * needsLocator: false
  * category: Authentication
  */
-export async function login(ctx: WalnutContext) {
+export async function login(ctx: WalnutWebContext) {
   // ctx.args contains resolved values from ${...} placeholders in the description, in order
   await ctx.navigate(ctx.testBaseUrl + '/login');
   await ctx.type('[data-testid="username"]', ctx.args[0]);
